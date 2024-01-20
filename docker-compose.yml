@@ -1,0 +1,15 @@
+version: '3'
+services:
+  postgres-15:
+    image: bitnami/postgresql:15.4.0-debian-11-r24
+    ports:
+      - "5435:5432"
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 123456789
+
+volumes:
+  db_data:
+    driver: local
